@@ -87,6 +87,7 @@ Thumbs.db
 
 # Sensitive data
 note.txt
+utils.py
 *.key
 *.pem
 *.p12
