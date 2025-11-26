@@ -1,0 +1,32 @@
+{% extends 'app/template.html' %}
+{% load static %} 
+{% load crispy_forms_tags %}
+{% block content %}
+
+<header class="masthead">
+    <!-- <img src="{% static 'img/post-bg.jpg' %}" alt=""> -->
+    <!-- <img src="{% static 'img/home-bg.jpg' %}" alt=""> -->
+    <div class="container position-relative px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <div class="site-heading">
+                    <h1>Clean Blog</h1>
+                    <span class="subheading">A Blog Theme by Start Bootstrap</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!--Register--> 
+<div class="container py-5">
+	<h1>Register</h1>
+	<form method="POST">
+		{% csrf_token %}
+		{{ register_form|crispy }}                    
+		<button class="btn btn-primary" type="submit">Register</button>
+	</form>
+	<p class="text-center">If you already have an account, <a href="/login">login</a> instead.</p>
+</div>
+
+{% endblock %}
